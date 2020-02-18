@@ -5,7 +5,7 @@ class Navbar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      'NavItemActive': ''
+      NavItemActive: ''
     }
   }
 
@@ -13,7 +13,7 @@ class Navbar extends Component {
     if(this.state.NavItemActive.length > 0){
       document.getElementById(this.state.NavItemActive).classList.remove('active');
     }
-    this.setState({'NavItemId':x}, ()=>{
+    this.setState({'NavItemActive':x}, ()=>{
       document.getElementById(this.state.NavItemActive).classList.add('active');
     })
   }
@@ -22,7 +22,7 @@ class Navbar extends Component {
     return (
       <nav>
         <ul>
-            <Navitem item='Home' activec={this.activeitem} tolink="/"></Navitem>
+            <Navitem item='Home' tolink="/" activec={this.activeitem}></Navitem>
             <Navitem item='About' tolink="/about" activec={this.activeitem}></Navitem>
             <Navitem item='Education' tolink="/education" activec={this.activeitem}></Navitem>
             <Navitem item='Skills' tolink="/skills" activec={this.activeitem}></Navitem>
